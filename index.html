@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legal solution</title>
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+
+    <!-- Google Font link goes here -->
+
+    <!-- Tailwind CSS and DaisyUI cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.3.1/dist/full.css"
+      rel="stylesheet"
+      type="text/css" />
+
+    <!-- Custom tailwind setup -->
+    <script>
+      module.exports = {
+        theme: {
+          extend: {
+            colors: {
+              'clr-primary': "#F85559",
+              'unfilled-star-clr':"##FBC0A8",
+              'title-clr':"#121212",
+              'desc-clr': "#12121299",
+
+              customGradient1Start: "#ff0000",
+              customGradient1End: "#00ff00",
+              customGradient2Start: "#0000ff",
+              customGradient2End: "#ff00ff",
+              // Add more gradient color combinations as needed
+            },
+            gradientColorStops: {
+              "custom-gradient-1": {
+                start: "var(--color-customGradient1Start)",
+                end: "var(--color-customGradient1End)",
+              },
+              "custom-gradient-2": {
+                start: "var(--color-customGradient2Start)",
+                end: "var(--color-customGradient2End)",
+              },
+              // Add more utility classes for gradients
+            },
+          },
+        },
+        // Other configurations...
+      };
+    </script>
+
+    <!-- Custom font style -->
+    <style>
+      /* Preferred CSS file (or use generated classes by Tailwind) */
+      .custom-gradient-1 {
+        --color-customGradient1Start: #ff0000;
+        --color-customGradient1End: #00ff00;
+        background-image: linear-gradient(
+          to right,
+          var(--color-customGradient1Start),
+          var(--color-customGradient1End)
+        );
+      }
+
+      .custom-gradient-2 {
+        --color-customGradient2Start: #960000;
+        --color-customGradient2End: #00f7ff;
+        background-image: linear-gradient(
+          to right,
+          var(--color-customGradient2Start),
+          var(--color-customGradient2End)
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Assignment -3 -->
+  </body>
+</html>
