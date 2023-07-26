@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Legal solution</title>
-    <!-- Font awesome -->
+    <title>FruitBrust</title>
+
+    <!-- Font awesome cdn -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -12,76 +13,126 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
 
-    <!-- Google Font link goes here -->
-
-    <!-- Tailwind CSS and DaisyUI cdn -->
+    <!-- Google font (lato) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
       rel="stylesheet" />
+
+    <!-- Tailwind and DaisyUI cdn -->
     <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@3.3.1/dist/full.css"
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.5.0/dist/full.css"
       rel="stylesheet"
       type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Custom tailwind setup -->
     <script>
-      module.exports = {
+      tailwind.config = {
         theme: {
           extend: {
             colors: {
-              'clr-primary': "#F85559",
-              'unfilled-star-clr':"##FBC0A8",
-              'title-clr':"#121212",
-              'desc-clr': "#12121299",
-
-              customGradient1Start: "#ff0000",
-              customGradient1End: "#00ff00",
-              customGradient2Start: "#0000ff",
-              customGradient2End: "#ff00ff",
-              // Add more gradient color combinations as needed
-            },
-            gradientColorStops: {
-              "custom-gradient-1": {
-                start: "var(--color-customGradient1Start)",
-                end: "var(--color-customGradient1End)",
-              },
-              "custom-gradient-2": {
-                start: "var(--color-customGradient2Start)",
-                end: "var(--color-customGradient2End)",
-              },
-              // Add more utility classes for gradients
+              "clr-primary": "#F85559",
+              "clr-title": "#121212",
+              "clr-desc": "#12121299",
             },
           },
         },
-        // Other configurations...
       };
     </script>
 
-    <!-- Custom font style -->
+    <!-- Basic css setup -->
     <style>
-      /* Preferred CSS file (or use generated classes by Tailwind) */
-      .custom-gradient-1 {
-        --color-customGradient1Start: #ff0000;
-        --color-customGradient1End: #00ff00;
-        background-image: linear-gradient(
-          to right,
-          var(--color-customGradient1Start),
-          var(--color-customGradient1End)
-        );
-      }
-
-      .custom-gradient-2 {
-        --color-customGradient2Start: #960000;
-        --color-customGradient2End: #00f7ff;
-        background-image: linear-gradient(
-          to right,
-          var(--color-customGradient2Start),
-          var(--color-customGradient2End)
-        );
+      /* typography */
+      .font-lato {
+        font-family: "Lato", sans-serif;
       }
     </style>
   </head>
-  <body>
-    <!-- Assignment -3 -->
+
+  <body class="font-lato">
+    <!-- header -->
+    <header>
+      <!-- navbar -->
+      <nav
+        class="container mx-auto rounded-[400px] px-4 m-2 shadow-lg md:bg-clr-primary">
+        <div>
+          <div class="navbar flex gap-2 justify-between">
+            <!-- nav items -->
+            <ul
+              class="hidden md:flex gap-4 text-white font-[500]"
+              tabindex="0"
+              class="menu menu-sm dropdown-content -ml-11 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a>Home</a></li>
+              <li><a>About Us</a></li>
+              <li><a>Shop</a></li>
+              <li><a>All Fruits</a></li>
+            </ul>
+            <!-- logo -->
+            <div class="flex items-center gap-3">
+              <img class="w-8" src="./images/logo.png" alt="" />
+              <h3 class="font-bold text-white text-1xl sm:text-2xl lg:text-3xl">
+                FruitBrust
+              </h3>
+            </div>
+            <!-- search bar -->
+            <div
+              class="navbar-end bg-white px-4 w-[250px] h-8 rounded-[700px] hidden md:flex justify-between">
+              <div class="form-control">
+                <input
+                  type="text"
+                  placeholder="Search"
+                  class="bg-transparent p-0" />
+              </div>
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 text-clr-desc"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </button>
+            </div>
+            <div class="navbar-end flex md:hidden">
+              <div class="dropdown">
+                <label tabindex="0" class="btn btn-ghost btn-circle">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 md:h-9 md:w-9"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h7" />
+                  </svg>
+                </label>
+                <ul
+                  tabindex="0"
+                  class="menu menu-sm dropdown-content absolute right-1 top-13 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                  <li><a>Home</a></li>
+                  <li><a>About Us</a></li>
+                  <li><a>Shop</a></li>
+                  <li><a>All Fruits </a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- main -->
+    <main></main>
+    <!-- footer -->
+    <footer></footer>
   </body>
 </html>
